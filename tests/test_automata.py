@@ -3,7 +3,7 @@ import unittest
 from automata import determinize, e_closure, e_determinize, sample_enfa, sample_nfa
 
 
-class AutomataTests(unittest.TestCase):
+class AutomatonTests(unittest.TestCase):
     def test_determinize_generates_expected_states_and_transitions(self) -> None:
         dfa_states, dfa_alphabet, dfa_transitions, dfa_initial_state, dfa_final_states = determinize(
             sample_nfa()

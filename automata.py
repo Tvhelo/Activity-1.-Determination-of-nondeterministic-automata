@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from itertools import chain, combinations
-from typing import Dict, FrozenSet, Iterable, Set, Tuple
+from typing import Collection, Dict, FrozenSet, Iterable, Set, Tuple
 
 EPSILON = "ε"
 
@@ -44,7 +44,7 @@ def sample_enfa() -> Automaton:
     return states, alphabet, transitions, initial_state, final_states
 
 
-def powerset(states: Iterable[State]) -> Set[SubsetState]:
+def powerset(states: Collection[State]) -> Set[SubsetState]:
     ordered_states = sorted(set(states))
     all_subsets = chain.from_iterable(
         combinations(ordered_states, size) for size in range(len(ordered_states) + 1)
